@@ -1,0 +1,10 @@
+name: Displaychest
+version: '${project.version}'
+main: me.xingyan.displaychest.Main
+api-version: 1.18
+commands:
+  displayitem:
+    usage: /<command>
+    aliases:
+      - di
+    permission: displaychest.use
