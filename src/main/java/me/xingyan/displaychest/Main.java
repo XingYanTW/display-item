@@ -1,9 +1,11 @@
 package me.xingyan.displaychest;
 
-import me.xingyan.displaychest.commands.CommandDisplayItem;
+import me.xingyan.displaychest.commands.CommandDisplayChest;
 import me.xingyan.displaychest.events.EventBreakChest;
 import me.xingyan.displaychest.events.EventDragItem;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import java.util.Objects;
 
 public final class Main extends JavaPlugin {
 
@@ -12,8 +14,8 @@ public final class Main extends JavaPlugin {
         // Plugin startup logic
         this.getServer().getPluginManager().registerEvents(new EventDragItem(), this);
         this.getServer().getPluginManager().registerEvents(new EventBreakChest(), this);
-        getCommand("DisplayItem").setExecutor(new CommandDisplayItem());
-
+        Objects.requireNonNull(getCommand("displaychest")).setExecutor(new CommandDisplayChest());
+        Objects.requireNonNull(getCommand("displaychest")).setTabCompleter(new TabComp());
     }
 
     @Override

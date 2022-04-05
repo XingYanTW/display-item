@@ -3,8 +3,8 @@ version: '${project.version}'
 main: me.xingyan.displaychest.Main
 api-version: 1.18
 commands:
-  displayitem:
+  displaychest:
     usage: /<command>
     aliases:
-      - di
+      - dc
     permission: displaychest.use
